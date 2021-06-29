@@ -2,14 +2,13 @@ package database
 
 import (
 	"database/sql"
-	"fmt"
 
 	"gopkg.in/gorp.v1"
 )
 
-func ClickHouseConnection(host string, port int) (dbmap *gorp.DbMap, err error) {
-	connStr := fmt.Sprintf("http://%v:%v/postgres", host, port)
-	db, err := sql.Open("clickhouse", connStr)
+// connection string: http://host:port/postgres
+func ClickHouseConnection(connectionString string) (dbmap *gorp.DbMap, err error) {
+	db, err := sql.Open("clickhouse", connectionString)
 	if err != nil {
 		return
 	}
