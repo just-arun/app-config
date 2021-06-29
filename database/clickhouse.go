@@ -7,7 +7,7 @@ import (
 	"gopkg.in/gorp.v1"
 )
 
-func (d *database) ClickHouseConnection(host string, port int) (dbmap *gorp.DbMap, err error) {
+func ClickHouseConnection(host string, port int) (dbmap *gorp.DbMap, err error) {
 	connStr := fmt.Sprintf("http://%v:%v/postgres", host, port)
 	db, err := sql.Open("clickhouse", connStr)
 	if err != nil {

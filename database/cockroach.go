@@ -6,7 +6,7 @@ import (
 	"gopkg.in/gorp.v1"
 )
 
-func (d *database) CockroachConnection(connectionUrl string) (*gorp.DbMap, error) {
+func CockroachConnection(connectionUrl string) (*gorp.DbMap, error) {
 	db, err := sql.Open("postgres", connectionUrl)
 	if err != nil {
 		return nil, err

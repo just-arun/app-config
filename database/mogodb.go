@@ -7,7 +7,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-func (d *database) MongoDbConnection(connectinString string) (client *mongo.Client, err error) {
+func MongoDbConnection(connectinString string) (client *mongo.Client, err error) {
 
 	// Set client options
 	clientOptions := options.Client().ApplyURI(connectinString)
